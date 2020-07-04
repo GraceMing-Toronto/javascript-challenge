@@ -1,6 +1,22 @@
 // from data.js
 var tableData = data;
 
+// select tbody 
+tbody = d3.select("tbody")
+console.log("hello")
+
+// loop through table using pbject entries
+function displayData(something){ 
+    tbody.text("")
+    something.forEach(function(et_sighting){
+    new_tr = tbody.append("tr")
+    Object.entries(et_sighting).forEach(function([key, value]){
+        new_td = new_tr.append("td").text(value)	
+    })
+})}
+
+displayData(tableData)
+
 // select the submit button
 var submit = d3.select("#filter-btn");
 
